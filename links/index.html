@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links | D's Ultra Cleaning</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans min-h-screen flex flex-col items-center py-12 px-4">
+
+  <!-- Profile Header -->
+  <div id="profile-container" class="flex flex-col items-center mb-8">
+    <!-- Injected automatically by JS -->
+  </div>
+
+  <!-- Button Container -->
+  <div class="w-full max-w-md space-y-4" id="links-container">
+    <!-- Injected automatically by JS -->
+  </div>
+
+  <script>
+    // Fetches the data Vanessa saved in the CMS
+    fetch('/data/links.json')
+      .then(response => response.json())
+      .then(data => {
+        
+        // 1. Build the Logo and Handle
+        const profileHtml = `
+          <img src="${data.logo || '/DsLogo.PNG'}" alt="Profile" class="w-24 h-24 rounded-full object-cover shadow-md mb-4 border-2 border-white">
+          <h1 class="text-xl font-bold">${data.handle || '@dsultracleaning'}</h1>
+        `;
+        document.getElementById('profile-container').innerHTML = profileHtml;
+
+        let linksHtml = '';
+
+        // 2. Build the Social Links
+        if (data.socials) {
+          data.socials.forEach(link => {
+            linksHtml += `
+              <a href="${link.url}" target="_blank" class="block w-full bg-slate-800 text-white text-center py-4 rounded-xl font-medium hover:bg-slate-700 transition shadow-sm">
+                ${link.text}
+              </a>
+            `;
+          });
+        }
+
+        // 3. Build the Amazon Links
+        if (data.amazon) {
+          linksHtml += `<h2 class="text-lg font-bold text-center mt-10 mb-4">Recommended Products</h2>`;
+          data.amazon.forEach(item => {
+            linksHtml += `
+              <a href="${item.url}" target="_blank" class="flex items-center w-full bg-white border border-slate-200 p-3 rounded-xl hover:shadow-md transition">
+                ${item.image ? `<img src="${item.image}" alt="${item.text}" class="w-16 h-16 object-cover rounded-lg mr-4">` : ''}
+                <span class="font-medium flex-1 text-left">${item.text}</span>
+              </a>
+            `;
+          });
+        }
+
+        document.getElementById('links-container').innerHTML = linksHtml;
+      })
+      .catch(error => {
+        console.error('Data not ready:', error);
+        document.getElementById('links-container').innerHTML = '<p class="text-center text-slate-500">Check back soon for our links!</p>';
+      });
+  </script>
+</body>
+</html>
