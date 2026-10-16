@@ -2,6 +2,9 @@ backend:
   name: git-gateway
   branch: main
 
+# This adds the logo to her Netlify login screen!
+logo_url: "/DsLogo.PNG"
+
 # Where images she uploads will be saved in your repository
 media_folder: "uploads"
 public_folder: "/uploads"
@@ -11,26 +14,13 @@ collections:
     label: "Link Dashboard Settings"
     files:
       - file: "data/links.json"
-        label: "Manage Links & Profile"
+        label: "Manage Recommended Products"
         name: "links"
         fields:
-          # Profile Info
-          - {label: "Logo Image", name: "logo", widget: "image", default: "/DsLogo.PNG"}
-          - {label: "Profile Handle", name: "handle", widget: "string", default: "@dsultracleaning"}
-          
-          # Standard Social Links
-          - label: "Social Links"
-            name: "socials"
-            widget: "list"
-            fields:
-              - {label: "Button Text", name: "text", widget: "string"}
-              - {label: "URL", name: "url", widget: "string"}
-          
-          # Amazon Affiliate Links
           - label: "Amazon Affiliates"
             name: "amazon"
             widget: "list"
             fields:
               - {label: "Product Name", name: "text", widget: "string"}
               - {label: "Amazon Link", name: "url", widget: "string"}
-              - {label: "Product Image", name: "image", widget: "image"}
+              - {label: "Product Image", name: "image", widget: "image", required: false}
