@@ -14,13 +14,13 @@ collections:
     label: "Link Dashboard Settings"
     files:
       - file: "data/links.json"
-        label: "Manage Recommended Products"
+        label: "Manage Affiliate Links"
         name: "links"
         fields:
-          - label: "Amazon Affiliates"
+          - label: "Affiliate Links"
             name: "amazon"
             widget: "list"
             fields:
-              - {label: "Product Name", name: "text", widget: "string"}
-              - {label: "Amazon Link", name: "url", widget: "string"}
-              - {label: "Product Image", name: "image", widget: "image", required: false}
+              - {label: "Link Title", name: "text", widget: "string"}
+              - {label: "URL (Amazon, TikTok, etc.)", name: "url", widget: "string"}
+              - {label: "Image", name: "image", widget: "image", required: false}
