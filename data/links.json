@@ -1,5 +1,12 @@
 {
   "socials": [],
   "logo": "/uploads/dslogo.png",
-  "handle": "Facebook"
+  "handle": "Facebook",
+  "amazon": [
+    {
+      "text": "Towels",
+      "url": "https://www.amazon.com/Koruser-Microfiber-Cleaning-Cloths-Polishing/dp/B09X5HWQ48/ref=sr_1_5_sspa?crid=2S9MHOOYKNSZC&dib=eyJ2IjoiMSJ9.ce9HaaijPuJjYWVa7wI9IprBmy5uJWaeRsJtJ2ClH8UmHZT-iWzk41cUipEtx2ME-pDMviu2yLykw16lKB6wnnWxp10LHjpxQfFuj9oWcEiG-vUxIylSLrGyOwE6FEmBIUwrifjdNoJH-aUkNFXPLDWy4Sf9zIH7t-MZWaqSE1ofsvq8rlrbm92W3CJnqFXATlQ-La5SuHHfRob53yZssjX_S9KeKx3blV6K_AERr7zDdLDG41Sp4GuSpqI8cJkXOIIOmTLaxHYDUurJAB7Sr06K4U_8ZEh8c8HT4Wg103w.yH1QtIyg833ZRuHOiQnBWigP185afI7Y6sGF_Twy-Ko&dib_tag=se&keywords=cleaning+towels&qid=1792338971&sprefix=cleaning+towel%2Caps%2C212&sr=8-5-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1",
+      "image": "/uploads/81ffcppibjl._ac_sl1500_.jpg"
+    }
+  ]
 }
